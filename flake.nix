@@ -7,7 +7,7 @@
       url = "github:numtide/flake-utils";
     };
     coder = {
-      url = "github:coder/coder/v0.9.1";
+      url = "github:coder/coder/v0.23.1";
       flake = false;
     };
   };

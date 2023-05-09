@@ -28,7 +28,7 @@ let
 
       suffix = if GOOS == "windows" then ".exe" else "";
     in
-    pkgs.buildGo119Module {
+    pkgs.buildGo120Module {
       pname = "coder-slim";
       inherit version;
 
@@ -42,7 +42,7 @@ let
       # NOTE: These get overridden if not manually specified in preBuild
       inherit GOOS GOARCH GOARM;
 
-      vendorSha256 = "sha256-qWjRr2s6hc5+ywJK05M3LxUeKZ9L0107QH5h0nqaFSY=";
+      vendorSha256 = "sha256-fJ+k5HWBYyXNJMEkTfv7eYcA68fDA2mBvHntbVQWnfQ=";
       preBuild = ''
         export GOOS="${GOOS}"
         export GOARCH="${GOARCH}"

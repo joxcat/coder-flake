@@ -80,6 +80,11 @@ mkDerivation {
   src = coder;
   sourceRoot = "${coder}/site";
 
+  configurePhase = ''
+    # https://github.com/vitejs/vite/issues/2433
+    export NODE_OPTIONS=--max-old-space-size=4096
+  '';
+
   buildPhase = ''
     cp -r ${coder}/site/* .
     ln -s ${modules}/node_modules node_modules

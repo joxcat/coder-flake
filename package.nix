@@ -11,7 +11,7 @@
 }:
 
 let
-  inherit (pkgs) buildGo119Module lib zstd;
+  inherit (pkgs) buildGo120Module lib zstd;
   inherit (pkgs.stdenv) hostPlatform mkDerivation;
 
   versionTag = "github.com/coder/coder/buildinfo.tag=${version}";
@@ -21,7 +21,7 @@ let
 
   suffix = if GOOS == "windows" then ".exe" else "";
 in
-buildGo119Module {
+buildGo120Module {
   pname = "coder";
   inherit version;
 
@@ -36,7 +36,7 @@ buildGo119Module {
 
   inherit GOOS GOARCH GOARM;
 
-  vendorSha256 = "sha256-qWjRr2s6hc5+ywJK05M3LxUeKZ9L0107QH5h0nqaFSY=";
+  vendorSha256 = "sha256-fJ+k5HWBYyXNJMEkTfv7eYcA68fDA2mBvHntbVQWnfQ=";
 
   # NOTE: We can't improve compilation re-use by building both enterprise
   # and non-enterprise here, because they both output binaries called "coder",
